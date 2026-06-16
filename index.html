@@ -1141,44 +1141,37 @@ async function submitWaitlist(type) {
     const btn = document.querySelector('.cta-btn');
     btn.textContent = 'Submitting...'; btn.disabled = true;
 
-    try {
-      const res = await fetch('https://script.google.com/macros/s/AKfycbwqwJSaCds8H7FevajUpdBDHSguG7uZBR2RGRPG4lgIBIGgUPdj-fKsvpvKf9Ssu7pTLw/exec', {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, phone, city, cityTier, optSms, optNewsletter, q1, q2, q3, q4 })
-      });
-      const data = await res.json();
-      if (data.success) {
-        document.getElementById('cta-form').style.display = 'none';
-        document.getElementById('cta-success').classList.add('visible');
-      } else {
-        alert('Something went wrong. Please try again.');
-        btn.textContent = 'Submit my Founding Member application →'; btn.disabled = false;
-      }
-    } catch (err) {
+    // Fire-and-forget to Apps Script — no-cors means we can't read the response,
+    // but the sheet logs and Resend email both fire server-side regardless.
+    fetch('https://script.google.com/macros/s/AKfycbwqwJSaCds8H7FevajUpdBDHSguG7uZBR2RGRPG4lgIBIGgUPdj-fKsvpvKf9Ssu7pTLw/exec', {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, email, phone, city, cityTier, optSms, optNewsletter, q1, q2, q3, q4 })
+    });
+
+    // Show success immediately — Apps Script handles the rest in the background
+    setTimeout(function() {
       document.getElementById('cta-form').style.display = 'none';
       document.getElementById('cta-success').classList.add('visible');
-    }
+    }, 800);
 
   } else {
     // Hero form — email only
     const btn = document.querySelector('.hero-btn');
     if (btn) { btn.textContent = 'Submitting...'; btn.disabled = true; }
-    try {
-      const res = await fetch('https://script.google.com/macros/s/AKfycbwqwJSaCds8H7FevajUpdBDHSguG7uZBR2RGRPG4lgIBIGgUPdj-fKsvpvKf9Ssu7pTLw/exec', {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name: '', email, phone: '', city: '', cityTier: '', optSms: 'No', optNewsletter: 'No', q1: '', q2: '', q3: '', q4: '' })
-      });
-      const data = await res.json();
+
+    fetch('https://script.google.com/macros/s/AKfycbwqwJSaCds8H7FevajUpdBDHSguG7uZBR2RGRPG4lgIBIGgUPdj-fKsvpvKf9Ssu7pTLw/exec', {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: '', email, phone: '', city: '', cityTier: '', optSms: 'No', optNewsletter: 'No', q1: '', q2: '', q3: '', q4: '' })
+    });
+
+    setTimeout(function() {
       document.getElementById('hero-form').style.display = 'none';
       document.getElementById('hero-success').classList.add('visible');
-    } catch (err) {
-      document.getElementById('hero-form').style.display = 'none';
-      document.getElementById('hero-success').classList.add('visible');
-    }
+    }, 800);
   }
 }
 // Smooth scroll for nav CTA
@@ -1189,6 +1182,3 @@ document.querySelector('.nav-cta').addEventListener('click', function(e) {
 </script>
 </body>
 </html>
-
-
-
