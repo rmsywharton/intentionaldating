@@ -5,9 +5,9 @@
  * Sends appropriate confirmation email per tier
  */
 
-const GOOGLE_SCRIPT_LAUNCH_URL = process.env.GOOGLE_SCRIPT_URL;
-const GOOGLE_SCRIPT_OTHER_URL  = process.env.GOOGLE_SCRIPT_OTHER_URL;
-const RESEND_API_KEY            = process.env.RESEND_API_KEY;
+
+
+
 const FROM_EMAIL                = "admissions@intentionaldating.app";
 const FROM_NAME                 = "The Intentional Dating App";
 
