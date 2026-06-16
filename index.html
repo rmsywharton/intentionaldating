@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intentional — The Dating App for People Who Are Serious</title>
+<meta name="copyright" content="© 2026 Firesign Holdings LLC. All rights reserved.">
+<meta name="author" content="Firesign Holdings LLC">
+<meta name="description" content="The dating app built for people who are done playing games. No ghosting. Verified identity. 35+ compatibility dimensions. Join the waitlist.">
+<meta property="og:title" content="Intentional Dating App — Join the Waitlist">
+<meta property="og:description" content="For people who are serious about finding real love. No ghosting. No fake profiles. Just real compatibility and real connection.">
+<meta property="og:url" content="https://intentionaldating.app">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap');
+
+  :root {
+    --navy-deep:  #0D0D1A;
+    --navy:       #111122;
+    --navy-mid:   #1A1A2E;
+    --steel:      #3D5A80;
+    --teal:       #0D9488;
+    --teal-light: #14B8A6;
+    --gold:       #F59E0B;
+    --gold-light: #FCD34D;
+    --rose:       #E879A0;
+    --cream:      #FAFAF7;
+    --white:      #FFFFFF;
+    --text-dim:   #A0B4C8;
+    --text-muted: #A0B4C8;
+    --border:     rgba(13,148,136,0.18);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--navy);
+    color: var(--white);
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── ANIMATIONS ─────────────────────────────────── */
+  @keyframes heartbeat {
+    0%   { transform: scale(1); }
+    14%  { transform: scale(1.13); }
+    28%  { transform: scale(1); }
+    42%  { transform: scale(1.08); }
+    56%  { transform: scale(1); }
+    100% { transform: scale(1); }
+  }
+  @keyframes ringpulse {
+    0%,100% { opacity: 0.18; }
+    14%      { opacity: 0.42; }
+    42%      { opacity: 0.30; }
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  @keyframes shimmer {
+    0%   { background-position: -200% center; }
+    100% { background-position: 200% center; }
+  }
+  @keyframes float {
+    0%,100% { transform: translateY(0); }
+    50%      { transform: translateY(-8px); }
+  }
+  @prefers-reduced-motion: reduce {
+    *, *::before, *::after { animation-duration: 0.01ms !important; }
+  }
+
+  /* ── NAV ─────────────────────────────────────────── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 18px 48px;
+    display: flex; align-items: center; justify-content: space-between;
+    background: rgba(13,13,26,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 0.5px solid var(--border);
+  }
+  .nav-logo {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px; font-weight: 600;
+    letter-spacing: 3px; color: var(--white);
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--teal); }
+  .nav-cta {
+    padding: 9px 22px;
+    background: var(--teal); color: var(--white);
+    border: none; border-radius: 100px;
+    font-size: 13px; font-weight: 500;
+    cursor: pointer; font-family: 'Inter', sans-serif;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--teal-light); }
+
+  /* ── HERO ─────────────────────────────────────────── */
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center;
+    padding: 120px 24px 80px;
+    position: relative; overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0; pointer-events: none;
+    background:
+      radial-gradient(ellipse 60% 50% at 50% 0%, rgba(13,148,136,0.12) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 40% at 80% 80%, rgba(245,158,11,0.06) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 40% at 20% 60%, rgba(232,121,160,0.05) 0%, transparent 60%);
+  }
+  .hero-logo-wrap {
+    animation: float 4s ease-in-out infinite;
+    margin-bottom: 40px;
+  }
+  .heart-animated { transform-origin: 80px 58px; animation: heartbeat 2.4s ease-in-out infinite; }
+  .ring-animated  { animation: ringpulse 2.4s ease-in-out infinite; }
+
+  .hero-eyebrow {
+    font-size: 11px; font-weight: 500; letter-spacing: 3px;
+    color: var(--teal); text-transform: uppercase;
+    margin-bottom: 20px;
+    animation: fadeUp 0.8s ease both 0.2s;
+  }
+  .hero-headline {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(42px, 7vw, 78px);
+    font-weight: 600; line-height: 1.08;
+    letter-spacing: -0.5px;
+    margin-bottom: 24px;
+    animation: fadeUp 0.8s ease both 0.4s;
+  }
+  .hero-headline em {
+    font-style: italic; color: var(--teal);
+  }
+  .hero-sub {
+    font-size: clamp(16px, 2vw, 19px);
+    color: var(--text-dim); font-weight: 300;
+    max-width: 540px; margin: 0 auto 48px;
+    line-height: 1.65;
+    animation: fadeUp 0.8s ease both 0.6s;
+  }
+  .hero-form {
+    display: flex; gap: 10px; flex-wrap: wrap;
+    justify-content: center; max-width: 500px; width: 100%;
+    animation: fadeUp 0.8s ease both 0.8s;
+  }
+  .hero-input {
+    flex: 1; min-width: 240px;
+    padding: 16px 22px;
+    background: rgba(255,255,255,0.06);
+    border: 0.5px solid var(--border);
+    border-radius: 100px; color: var(--white);
+    font-size: 14px; font-family: 'Inter', sans-serif;
+    outline: none;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .hero-input::placeholder { color: var(--text-muted); }
+  .hero-input:focus { border-color: var(--teal); background: rgba(13,148,136,0.08); }
+  .hero-btn {
+    padding: 16px 32px;
+    background: var(--teal); color: var(--white);
+    border: none; border-radius: 100px;
+    font-size: 14px; font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer; white-space: nowrap;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .hero-btn:hover { background: var(--teal-light); transform: translateY(-1px); }
+  .hero-btn:active { transform: translateY(0); }
+  .hero-micro {
+    font-size: 12px; color: var(--text-muted);
+    margin-top: 14px;
+    animation: fadeUp 0.8s ease both 1s;
+  }
+  .hero-micro span { color: var(--gold); }
+
+  /* Success state */
+  .success-box {
+    display: none;
+    background: rgba(13,148,136,0.12);
+    border: 0.5px solid var(--teal);
+    border-radius: 16px; padding: 24px 32px;
+    text-align: center; animation: fadeIn 0.4s ease;
+  }
+  .success-box.visible { display: block; }
+  .success-icon { font-size: 32px; margin-bottom: 10px; }
+  .success-title { font-family: 'Cormorant Garamond', serif; font-size: 24px; margin-bottom: 8px; }
+  .success-body { font-size: 13px; color: var(--text-dim); line-height: 1.6; }
+  .success-badge {
+    display: inline-block; margin-top: 14px;
+    padding: 6px 18px; border-radius: 100px;
+    background: linear-gradient(135deg, var(--gold), #E8870A);
+    color: var(--navy); font-size: 11px; font-weight: 700;
+    letter-spacing: 1.5px; text-transform: uppercase;
+  }
+
+  /* ── DIVIDER ─────────────────────────────────────── */
+  .divider {
+    display: flex; align-items: center; gap: 16px;
+    padding: 0 48px; opacity: 0.3;
+  }
+  .divider-line { flex: 1; height: 0.5px; background: var(--teal); }
+  .divider-icon { color: var(--teal); font-size: 14px; }
+
+  /* ── SECTION BASE ─────────────────────────────────── */
+  section { padding: 96px 24px; }
+  .container { max-width: 1100px; margin: 0 auto; }
+  .section-label {
+    font-size: 11px; font-weight: 500; letter-spacing: 3px;
+    color: var(--teal); text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .section-headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 600; line-height: 1.12;
+    margin-bottom: 20px;
+  }
+  .section-sub {
+    font-size: 17px; color: var(--text-dim);
+    max-width: 540px; line-height: 1.65; font-weight: 300;
+  }
+
+  /* ── PROBLEM SECTION ─────────────────────────────── */
+  .problem { background: var(--navy-deep); }
+  .problem-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px; margin-top: 56px;
+  }
+  .problem-card {
+    background: rgba(255,255,255,0.03);
+    border: 0.5px solid rgba(255,255,255,0.08);
+    border-radius: 20px; padding: 28px;
+    transition: border-color 0.2s;
+  }
+  .problem-card:hover { border-color: var(--border); }
+  .problem-emoji { font-size: 28px; margin-bottom: 16px; }
+  .problem-title {
+    font-size: 15px; font-weight: 600; margin-bottom: 8px;
+  }
+  .problem-body { font-size: 14px; color: var(--text-dim); line-height: 1.75; }
+
+  /* ── SOLUTION / PILLARS ──────────────────────────── */
+  .pillars { background: var(--navy-mid); }
+  .pillar-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px; margin-top: 56px;
+  }
+  .pillar {
+    border: 0.5px solid var(--border);
+    border-radius: 20px; padding: 32px 24px;
+    position: relative; overflow: hidden;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  .pillar:hover { transform: translateY(-3px); border-color: var(--teal); }
+  .pillar-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px; font-weight: 700;
+    color: var(--teal); line-height: 1;
+    margin-bottom: 12px;
+  }
+  .pillar-label { font-size: 14px; font-weight: 600; margin-bottom: 8px; }
+  .pillar-desc { font-size: 13px; color: var(--text-dim); line-height: 1.6; }
+  .pillar-accent {
+    position: absolute; top: 0; right: 0;
+    width: 60px; height: 60px;
+    background: radial-gradient(circle, rgba(13,148,136,0.15), transparent);
+  }
+
+  /* ── DIFFERENTIATORS ─────────────────────────────── */
+  .diff { background: var(--navy-deep); }
+  .diff-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1px;
+    background: rgba(13,148,136,0.15);
+    border: 0.5px solid var(--border);
+    border-radius: 24px; overflow: hidden;
+    margin-top: 56px;
+  }
+  .diff-item {
+    background: var(--navy-deep);
+    padding: 32px 28px;
+    transition: background 0.2s;
+  }
+  .diff-item:hover { background: rgba(13,148,136,0.04); }
+  .diff-icon { font-size: 24px; margin-bottom: 14px; }
+  .diff-title { font-size: 15px; font-weight: 600; margin-bottom: 8px; }
+  .diff-body { font-size: 13px; color: var(--text-dim); line-height: 1.65; }
+
+  /* ── PROTOCOL TIMELINE ───────────────────────────── */
+  .protocol { background: var(--navy-mid); }
+  .timeline {
+    display: flex; flex-direction: column; gap: 0;
+    margin-top: 56px; position: relative;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute; left: 20px; top: 0; bottom: 0;
+    width: 1px; background: var(--border);
+  }
+  .tl-item {
+    display: flex; gap: 28px; align-items: flex-start;
+    padding: 28px 0; position: relative;
+  }
+  .tl-dot {
+    width: 42px; height: 42px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 700; flex-shrink: 0;
+    position: relative; z-index: 1;
+  }
+  .tl-content { flex: 1; padding-top: 8px; }
+  .tl-day { font-size: 11px; color: var(--text-muted); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px; }
+  .tl-title { font-size: 17px; font-weight: 600; margin-bottom: 8px; }
+  .tl-body { font-size: 14px; color: var(--text-dim); line-height: 1.6; }
+
+  /* ── GHOST SECTION ───────────────────────────────── */
+  .ghost-section { background: var(--navy-deep); }
+  .ghost-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px; margin-top: 56px;
+  }
+  .ghost-card {
+    border-radius: 20px; padding: 24px;
+    border: 0.5px solid;
+  }
+  .ghost-card-header {
+    display: flex; align-items: center; gap: 10px; margin-bottom: 12px;
+  }
+  .ghost-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+  .ghost-time { font-size: 13px; font-weight: 600; }
+  .ghost-body { font-size: 13px; color: var(--text-dim); line-height: 1.6; }
+
+  /* ── INTEGRITY SCORE ─────────────────────────────── */
+  .integrity { background: var(--navy-mid); }
+  .score-display {
+    display: flex; align-items: center; justify-content: center;
+    gap: 56px; flex-wrap: wrap; margin-top: 56px;
+  }
+  .score-visual {
+    position: relative; width: 160px; height: 160px;
+  }
+  .score-number {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+  }
+  .score-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px; font-weight: 700; color: var(--teal);
+    line-height: 1;
+  }
+  .score-label { font-size: 10px; color: var(--text-muted); letter-spacing: 1.5px; }
+  .score-tiers { display: flex; flex-direction: column; gap: 12px; max-width: 340px; }
+  .score-tier {
+    display: flex; align-items: center; gap: 14px;
+    padding: 12px 16px; border-radius: 12px;
+    background: rgba(255,255,255,0.03);
+    border: 0.5px solid rgba(255,255,255,0.07);
+  }
+  .tier-range { font-size: 13px; font-weight: 600; min-width: 60px; }
+  .tier-label { font-size: 12px; color: var(--text-dim); }
+  .tier-badge {
+    margin-left: auto; font-size: 10px; padding: 3px 10px;
+    border-radius: 100px; font-weight: 600; letter-spacing: 0.5px;
+  }
+
+  /* ── CTA SECTION ─────────────────────────────────── */
+  .cta-section {
+    background: var(--navy-deep);
+    text-align: center; padding: 120px 24px;
+  }
+  .cta-section .section-headline { color: var(--white); }
+  .cta-shimmer {
+    background: linear-gradient(90deg, var(--teal), var(--gold), var(--teal));
+    background-size: 200% auto;
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 3s linear infinite;
+  }
+  .cta-form {
+    max-width: 480px; margin: 40px auto 0;
+    display: flex; flex-direction: column; gap: 12px;
+  }
+  .cta-input {
+    padding: 16px 22px;
+    background: rgba(255,255,255,0.06);
+    border: 0.5px solid var(--border);
+    border-radius: 100px; color: var(--white);
+    font-size: 15px; font-family: 'Inter', sans-serif;
+    outline: none; width: 100%;
+    transition: border-color 0.2s;
+  }
+  .cta-input::placeholder { color: var(--text-muted); }
+  .cta-input:focus { border-color: var(--teal); }
+  .cta-btn {
+    padding: 18px; width: 100%;
+    background: var(--teal); color: var(--white);
+    border: none; border-radius: 100px;
+    font-size: 15px; font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .cta-btn:hover { background: var(--teal-light); transform: translateY(-1px); }
+  .cta-micro { font-size: 12px; color: var(--text-muted); margin-top: 12px; }
+  .cta-micro span { color: var(--gold); }
+
+  /* ── FOOTER ──────────────────────────────────────── */
+  footer {
+    background: var(--navy-deep);
+    border-top: 0.5px solid var(--border);
+    padding: 40px 48px;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 16px;
+  }
+  .footer-logo {
+    font-family: 'Inter', sans-serif; font-size: 13px;
+    font-weight: 600; letter-spacing: 3px; color: var(--white);
+  }
+  .footer-logo span { color: var(--teal); }
+  .footer-links { display: flex; gap: 24px; }
+  .footer-links a { font-size: 12px; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--teal); }
+  .footer-copy { font-size: 11px; color: var(--text-muted); }
+  .footer-social { display: flex; gap: 14px; align-items: center; }
+  .social-link {
+    font-size: 11px; color: var(--text-muted); text-decoration: none;
+    padding: 5px 10px; border-radius: 100px;
+    border: 0.5px solid rgba(255,255,255,0.1);
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .social-link:hover { border-color: var(--teal); color: var(--teal); }
+
+  /* ── RESPONSIVE ──────────────────────────────────── */
+  @media (max-width: 768px) {
+    nav { padding: 16px 20px; }
+    section { padding: 72px 20px; }
+    .score-display { gap: 32px; }
+    footer { padding: 32px 20px; flex-direction: column; text-align: center; }
+    .footer-links { justify-content: center; }
+    .footer-social { justify-content: center; }
+    .timeline::before { left: 18px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">INTENTIONAL<span>.</span></a>
+  <a href="#apply" class="nav-cta">Apply for access</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+
+  <div class="hero-logo-wrap">
+    <svg width="160" height="130" viewBox="0 0 160 130" xmlns="http://www.w3.org/2000/svg" aria-label="Intentional Dating App logo">
+      <!-- Outer ring pulses with heartbeat -->
+      <circle class="ring-animated" cx="80" cy="58" r="52" fill="none" stroke="#0D9488" stroke-width="0.8"/>
+      <!-- Soft inner glow — very subtle, no visible circle edge -->
+      <circle cx="80" cy="58" r="30" fill="#0D9488" opacity="0.06"/>
+      <!-- Heart scales from its own center -->
+      <g class="heart-animated">
+        <path d="M80 88 C80 88 44 65 44 44 C44 30 54 21 64 24 C69 26 74 32 80 40 C86 32 91 26 96 24 C106 21 116 30 116 44 C116 65 80 88 80 88Z" fill="#0D9488"/>
+      </g>
+    </svg>
+  </div>
+
+  <p class="hero-eyebrow">Now accepting Founding Members</p>
+
+  <h1 class="hero-headline">
+    The most transformative<br>
+    <em>dating experience you’ll ever have.</em>
+  </h1>
+
+  <p class="hero-sub">
+    Dating on an app is hard because you're not getting the depth. Intentional was built differently — with questions that go deeper than any other app dares to ask, and a transparency system that means you always know where you stand. Let us connect you.
+  </p>
+
+  <div class="hero-form" id="hero-form">
+    <button class="hero-btn" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'});return false;">Apply for access</button>
+  </div>
+
+  <p class="hero-micro">Free to apply · <span>Limited Founding Member spots</span> · No credit card required</p>
+</section>
+
+
+<!-- FOUNDING MEMBER BENEFITS -->
+<section style="background:linear-gradient(135deg,#0D0D1A 0%,#1A1A2E 100%);padding:72px 24px;border-top:0.5px solid rgba(245,158,11,0.2);border-bottom:0.5px solid rgba(245,158,11,0.2);">
+  <div style="max-width:1000px;margin:0 auto;">
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:32px;">
+      <div style="max-width:420px;">
+        <p style="font-size:11px;font-weight:500;letter-spacing:3px;color:#F59E0B;text-transform:uppercase;margin-bottom:14px;">Why join now</p>
+        <h2 style="font-family:Cormorant Garamond,Georgia,serif;font-size:clamp(28px,3.5vw,44px);font-weight:600;line-height:1.12;color:#fff;margin-bottom:16px;">What it means to be a <span style="color:#F59E0B;">Founding Member.</span></h2>
+        <p style="font-size:15px;color:#A0B4C8;line-height:1.7;font-weight:300;">Founding Member spots are limited and do not reopen. When they are gone, they are gone. The people who join now are the ones who shape what this becomes.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px;flex:1;min-width:280px;max-width:480px;">
+        <div style="display:flex;align-items:flex-start;gap:14px;background:rgba(245,158,11,0.06);border:0.5px solid rgba(245,158,11,0.2);border-radius:14px;padding:16px 18px;">
+          <div style="font-size:22px;flex-shrink:0;margin-top:2px;">🏅</div>
+          <div>
+            <div style="font-size:13px;font-weight:600;color:#F59E0B;margin-bottom:4px;">Gold Founding Member badge — permanently on your profile</div>
+            <div style="font-size:12px;color:#A0B4C8;line-height:1.6;">Every match you ever have will see it. It signals you were here first and believed in something before anyone else did.</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:14px;background:rgba(245,158,11,0.06);border:0.5px solid rgba(245,158,11,0.2);border-radius:14px;padding:16px 18px;">
+          <div style="font-size:22px;flex-shrink:0;margin-top:2px;">🔒</div>
+          <div>
+            <div style="font-size:13px;font-weight:600;color:#F59E0B;margin-bottom:4px;">Founding Member pricing — locked in for life</div>
+            <div style="font-size:12px;color:#A0B4C8;line-height:1.6;">Your rate never increases. The price only goes up after launch. You pay what you paid when you believed first.</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:14px;background:rgba(245,158,11,0.06);border:0.5px solid rgba(245,158,11,0.2);border-radius:14px;padding:16px 18px;">
+          <div style="font-size:22px;flex-shrink:0;margin-top:2px;">🗓️</div>
+          <div>
+            <div style="font-size:13px;font-weight:600;color:#F59E0B;margin-bottom:4px;">Priority access before the public launch</div>
+            <div style="font-size:12px;color:#A0B4C8;line-height:1.6;">You get in first. Your city pool fills with people who share your level of seriousness. You are not competing with the masses — you are ahead of them.</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:14px;background:rgba(245,158,11,0.06);border:0.5px solid rgba(245,158,11,0.2);border-radius:14px;padding:16px 18px;">
+          <div style="font-size:22px;flex-shrink:0;margin-top:2px;">💬</div>
+          <div>
+            <div style="font-size:13px;font-weight:600;color:#F59E0B;margin-bottom:4px;">Your experience shapes what gets built</div>
+            <div style="font-size:12px;color:#A0B4C8;line-height:1.6;">Founding Members are surveyed during beta. Your feedback directly influences what comes next. This is your app as much as ours.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:36px;">
+      <a href="#apply" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'});return false;" style="display:inline-block;padding:16px 40px;background:#F59E0B;color:#111122;border-radius:100px;font-size:14px;font-weight:700;text-decoration:none;letter-spacing:0.5px;transition:opacity 0.2s;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">Apply for Founding Member access →</a>
+      <p style="font-size:11px;color:#A0B4C8;margin-top:12px;">No credit card required · Limited spots · Phoenix, New York & Austin launching first</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="problem">
+  <div class="container">
+    <p class="section-label">The problem</p>
+    <h2 class="section-headline">The anxiety of not knowing<br>is exhausting everyone.</h2>
+    <p class="section-sub">You don’t know if they’re talking to ten other people. You don’t know why they went quiet. You don’t know if they can show up when things get hard. Intentional changes all of that.</p>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="problem-emoji">👻</div>
+        <div class="problem-title">The silence is deafening</div>
+        <div class="problem-body">You sent a message. You went on a date. And then — nothing. No explanation. No closure. Just silence, and the spiral that follows it.</div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-emoji">📄</div>
+        <div class="problem-title">You never really know who you’re talking to</div>
+        <div class="problem-body">A name, a photo, a one-liner. After weeks of talking you still don’t know how they handle conflict, what they need financially, or whether they can actually commit.</div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-emoji">🎭</div>
+        <div class="problem-title">You can’t trust what you’re seeing</div>
+        <div class="problem-body">Unverified profiles. Outdated photos. People presenting a version of themselves that doesn’t match who shows up on the date.</div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-emoji">🔄</div>
+        <div class="problem-title">You’re exhausted and you know it</div>
+        <div class="problem-body">You’ve been on the apps. You’ve swiped, matched, chatted, and been disappointed. You’re not looking for more options. You’re looking for the right one.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTENTIONAL IS FOR YOU -->
+<section style="background:#0D0D1A;padding:80px 24px;border-top:0.5px solid rgba(13,148,136,0.2);border-bottom:0.5px solid rgba(13,148,136,0.2);">
+  <div style="max-width:720px;margin:0 auto;">
+    <p class="section-label" style="text-align:center;">Who this is for</p>
+    <h2 class="section-headline" style="text-align:center;">Intentional is for you if...</h2>
+    <div style="display:flex;flex-direction:column;gap:20px;margin-top:40px;">
+      <div style="display:flex;align-items:flex-start;gap:20px;">
+        <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:rgba(13,148,136,0.15);border:0.5px solid rgba(13,148,136,0.4);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#0D9488;">01</div>
+        <div style="padding-top:6px;font-size:15px;color:#A0B4C8;line-height:1.7;">You want a <strong style="color:#fff;">long-term partner</strong>, not another situationship. Every other app is built for casual. This one isn't.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:20px;">
+        <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:rgba(13,148,136,0.15);border:0.5px solid rgba(13,148,136,0.4);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#0D9488;">02</div>
+        <div style="padding-top:6px;font-size:15px;color:#A0B4C8;line-height:1.7;">You've been on the apps and you're <strong style="color:#fff;">tired of the experience</strong>. You want to get past the surface faster and connect on what actually matters.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:20px;">
+        <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:rgba(13,148,136,0.15);border:0.5px solid rgba(13,148,136,0.4);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#0D9488;">03</div>
+        <div style="padding-top:6px;font-size:15px;color:#A0B4C8;line-height:1.7;">You want a <strong style="color:#fff;">safer, lower-anxiety environment</strong> — verified identities, no ghosting, and you always know where you stand.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:20px;">
+        <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:rgba(13,148,136,0.15);border:0.5px solid rgba(13,148,136,0.4);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#0D9488;">04</div>
+        <div style="padding-top:6px;font-size:15px;color:#A0B4C8;line-height:1.7;">Your life, values, and version of a great relationship are <strong style="color:#fff;">specific</strong>. You want an app that actually addresses the questions others won't ask.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:20px;">
+        <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:rgba(13,148,136,0.15);border:0.5px solid rgba(13,148,136,0.4);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#0D9488;">05</div>
+        <div style="padding-top:6px;font-size:15px;color:#A0B4C8;line-height:1.7;">You genuinely believe <strong style="color:#fff;">love and healthy relationships make the world better</strong> — and being part of something that advances that matters to you.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PILLARS -->
+<section class="pillars">
+  <div class="container">
+    <p class="section-label">The solution</p>
+    <h2 class="section-headline">Built on four uncompromising pillars.</h2>
+    <p class="section-sub">Every feature on Intentional exists to serve one outcome — helping serious people find a real relationship.</p>
+    <div class="pillar-row">
+      <div class="pillar">
+        <div class="pillar-accent"></div>
+        <div class="pillar-num">35+</div>
+        <div class="pillar-label">Profile dimensions</div>
+        <div class="pillar-desc">Covering every real compatibility factor no other app asks about — mindset, finances, healing, intimacy, body composition, sleep habits, and more.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-accent"></div>
+        <div class="pillar-num">25</div>
+        <div class="pillar-label">Curated candidates</div>
+        <div class="pillar-desc">AI surfaces your top 25 matches. Not an infinite stack. A deliberate, ranked pool of compatible people — refreshed as you act on it.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-accent"></div>
+        <div class="pillar-num">7</div>
+        <div class="pillar-label">Day protocol</div>
+        <div class="pillar-desc">Every connection has a structured 7-day path from first message to first date. The app tracks it. Ghosting has consequences here.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-accent"></div>
+        <div class="pillar-num">10</div>
+        <div class="pillar-label">Point integrity score</div>
+        <div class="pillar-desc">Your dating character is measurable. Visible on every profile. Earned through consistent, respectful behavior — and lost when you disappear.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFFERENTIATORS -->
+<section class="diff">
+  <div class="container">
+    <p class="section-label">What we ask that nobody else does</p>
+    <h2 class="section-headline">What actually determines<br>whether love lasts.</h2>
+    <p class="section-sub">These are the things that actually determine long-term compatibility. We ask them upfront so you don't discover them three months in.</p>
+    <div class="diff-grid">
+      <div class="diff-item">
+        <div class="diff-icon">🧠</div>
+        <div class="diff-title">Mindset & healing depth</div>
+        <div class="diff-body">Self-reflection practices, attachment style, trauma work — separated by type. No other dating app goes here.</div>
+      </div>
+      <div class="diff-item">
+        <div class="diff-icon">💰</div>
+        <div class="diff-title">Financial health upfront</div>
+        <div class="diff-body">Financial values, position, habits, and partnership expectations — surfaced before the first date, not after.</div>
+      </div>
+      <div class="diff-item">
+        <div class="diff-icon">❤️</div>
+        <div class="diff-title">Intimacy & sexual health</div>
+        <div class="diff-body">Physical pace, intimacy needs, and health disclosure — handled with dignity, privacy, and complete honesty.</div>
+      </div>
+      <div class="diff-item">
+        <div class="diff-icon">🐾</div>
+        <div class="diff-title">Pets & travel reality</div>
+        <div class="diff-body">Allergies, sleeping arrangements, boarding costs, travel flexibility. Real lifestyle factors that end real relationships.</div>
+      </div>
+      <div class="diff-item">
+        <div class="diff-icon">👨‍👩‍👧</div>
+        <div class="diff-title">Family & age gap honesty</div>
+        <div class="diff-body">Children who always come first, aging parents, biological timelines, and financial provider expectations all named.</div>
+      </div>
+      <div class="diff-item">
+        <div class="diff-icon">📊</div>
+        <div class="diff-title">Body composition education</div>
+        <div class="diff-body">Frame, muscle vs fat distribution, how weight is carried — not just a number. We educate while we match.</div>
+      </div>
+      <div class="diff-item">
+        <div class="diff-icon">😴</div>
+        <div class="diff-title">Sleep & bedroom compatibility</div>
+        <div class="diff-body">CPAP machines, snoring, night guards, light sensitivity, TV habits, temperature — things that affect daily life together.</div>
+      </div>
+      <div class="diff-item">
+        <div class="diff-icon">🌿</div>
+        <div class="diff-title">Wellness practices</div>
+        <div class="diff-body">Supplements, sauna, cold plunge, red light therapy, breathwork — how you take care of yourself is part of who you are.</div>
+      </div>
+      <div class="diff-item">
+        <div class="diff-icon">🤠</div>
+        <div class="diff-title">Western, ranch & country lifestyle</div>
+        <div class="diff-body">Horses, rodeo, ranch life, barrel racing, roping — a complete lifestyle identity no other app acknowledges exists.</div>
+      </div>
+      <div class="diff-item">
+        <div class="diff-icon">🎱</div>
+        <div class="diff-title">Social games & gaming culture</div>
+        <div class="diff-body">Billiards, poker nights, darts, casino trips, bar games — a full social lifestyle that shapes who you spend your time with.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div style="background:#0A0A1A;border-top:0.5px solid rgba(13,148,136,0.2);border-bottom:0.5px solid rgba(13,148,136,0.2);padding:28px 24px;">
+  <div style="max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:wrap;">
+    <div style="text-align:center;padding:0 32px;border-right:0.5px solid rgba(13,148,136,0.2);">
+      <div style="font-size:18px;margin-bottom:6px;">🔒</div>
+      <div style="font-size:12px;font-weight:600;color:#fff;letter-spacing:0.5px;margin-bottom:4px;">All members face-verified</div>
+      <div style="font-size:11px;color:#A0B4C8;line-height:1.5;">Government ID matched to live biometric scan</div>
+    </div>
+    <div style="text-align:center;padding:0 32px;border-right:0.5px solid rgba(13,148,136,0.2);">
+      <div style="font-size:18px;margin-bottom:6px;">🛡️</div>
+      <div style="font-size:12px;font-weight:600;color:#fff;letter-spacing:0.5px;margin-bottom:4px;">Your safety matters here</div>
+      <div style="font-size:11px;color:#A0B4C8;line-height:1.5;">No fake profiles. No bots. No exceptions.</div>
+    </div>
+    <div style="text-align:center;padding:0 32px;border-right:0.5px solid rgba(13,148,136,0.2);">
+      <div style="font-size:18px;margin-bottom:6px;">⚖️</div>
+      <div style="font-size:12px;font-weight:600;color:#fff;letter-spacing:0.5px;margin-bottom:4px;">Catfishing is a criminal offense</div>
+      <div style="font-size:11px;color:#A0B4C8;line-height:1.5;">AZ, TX & NY identity fraud statutes apply</div>
+    </div>
+    <div style="text-align:center;padding:0 32px;">
+      <div style="font-size:18px;margin-bottom:6px;">🚫</div>
+      <div style="font-size:12px;font-weight:600;color:#fff;letter-spacing:0.5px;margin-bottom:4px;">No ads. No data selling. Ever.</div>
+      <div style="font-size:11px;color:#A0B4C8;line-height:1.5;">Revenue from subscribers only · Firesign Holdings LLC</div>
+    </div>
+  </div>
+</div>
+
+<!-- PROTOCOL -->
+<section class="protocol">
+  <div class="container">
+    <p class="section-label">The 7-day protocol</p>
+    <h2 class="section-headline">From match to first date in one week.</h2>
+    <p class="section-sub">Every connection has a structured path. The app tracks it. Both people see exactly where they are — and what comes next.</p>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot" style="background:#0D9488;">1</div>
+        <div class="tl-content">
+          <div class="tl-day">Day 1 – 2</div>
+          <div class="tl-title">In-app messaging</div>
+          <div class="tl-body">Connect, introduce, start a real conversation. AI suggests opening questions based on your compatibility breakdown. Both profiles are open and visible.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot" style="background:#3D5A80;">2</div>
+        <div class="tl-content">
+          <div class="tl-day">By Day 3</div>
+          <div class="tl-title">Move off the app</div>
+          <div class="tl-body">Exchange numbers. Both parties confirm in-app that you've moved. The escalation tracker advances. This bilateral confirmation is required — the app doesn't assume.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot" style="background:#F59E0B;">3</div>
+        <div class="tl-content">
+          <div class="tl-day">Day 4 – 5</div>
+          <div class="tl-title">Voice or phone call</div>
+          <div class="tl-body">Hear each other's voice. The best predictor of in-person chemistry is how a conversation feels on the phone. This step is intentional.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot" style="background:#E879A0;">4</div>
+        <div class="tl-content">
+          <div class="tl-day">By Day 7</div>
+          <div class="tl-title">First date</div>
+          <div class="tl-body">Plan it. Confirm it. Show up. Seven days from first message to first date. The protocol exists because momentum matters — and so does your time.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ANTI-GHOSTING -->
+<section class="ghost-section">
+  <div class="container">
+    <p class="section-label">Anti-ghosting protocol</p>
+    <h2 class="section-headline">You’ll never be left wondering<br>what happened.</h2>
+    <p class="section-sub">Intentional has a structured accountability system built into every conversation. Silence has a consequence. Respect has a reward. And you always know where things stand.</p>
+    <div class="ghost-cards">
+      <div class="ghost-card" style="background:rgba(245,158,11,0.06);border-color:rgba(245,158,11,0.3);">
+        <div class="ghost-card-header">
+          <div class="ghost-dot" style="background:#F59E0B;"></div>
+          <div class="ghost-time" style="color:#F59E0B;">24 hours</div>
+        </div>
+        <div class="ghost-body">Both parties receive a private check-in. Four honest options: need more time, not as interested, moving off-app, or respectful close. No flag yet — just a nudge.</div>
+      </div>
+      <div class="ghost-card" style="background:rgba(249,115,22,0.06);border-color:rgba(249,115,22,0.3);">
+        <div class="ghost-card-header">
+          <div class="ghost-dot" style="background:#F97316;"></div>
+          <div class="ghost-time" style="color:#F97316;">48 hours</div>
+        </div>
+        <div class="ghost-body">A ghost flag is pinned to the non-responsive party's public profile. Permanent count. Visible to all potential matches. Accountability is public.</div>
+      </div>
+      <div class="ghost-card" style="background:rgba(239,68,68,0.06);border-color:rgba(239,68,68,0.3);">
+        <div class="ghost-card-header">
+          <div class="ghost-dot" style="background:#EF4444;"></div>
+          <div class="ghost-time" style="color:#EF4444;">72 hours</div>
+        </div>
+        <div class="ghost-body">Connection auto-closes. Both profiles freed. Dating integrity score updated for the non-responsive party. The record is permanent.</div>
+      </div>
+      <div class="ghost-card" style="background:rgba(34,197,94,0.06);border-color:rgba(34,197,94,0.3);">
+        <div class="ghost-card-header">
+          <div class="ghost-dot" style="background:#22C55E;"></div>
+          <div class="ghost-time" style="color:#22C55E;">Anytime</div>
+        </div>
+        <div class="ghost-body">Respectful Close — a guided 30-second goodbye. No ghost flag issued. Your integrity score is protected. Honesty is always rewarded here.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTEGRITY SCORE -->
+<section class="integrity">
+  <div class="container">
+    <p class="section-label">Dating integrity score</p>
+    <h2 class="section-headline">Here, how you treat people<br>follows you everywhere.</h2>
+    <p class="section-sub">Every member has a score from 0 to 10. System-generated from real behavior. Visible on every profile. You earn it — or you don't.</p>
+    <div class="score-display">
+      <div class="score-visual">
+        <svg width="160" height="160" viewBox="0 0 160 160" style="transform:rotate(-90deg);">
+          <circle cx="80" cy="80" r="68" fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="8"/>
+          <circle cx="80" cy="80" r="68" fill="none" stroke="#0D9488" stroke-width="8" stroke-dasharray="392" stroke-dashoffset="47" stroke-linecap="round"/>
+        </svg>
+        <div class="score-number">
+          <div class="score-num">8.7</div>
+          <div class="score-label">YOUR SCORE</div>
+        </div>
+      </div>
+      <div class="score-tiers">
+        <div class="score-tier">
+          <div class="tier-range" style="color:#22C55E;">9.0 – 10</div>
+          <div class="tier-label">Excellent — priority boost in matching</div>
+          <div class="tier-badge" style="background:#dcfce7;color:#15803d;">✦ Priority</div>
+        </div>
+        <div class="score-tier">
+          <div class="tier-range" style="color:#0D9488;">7.0 – 8.9</div>
+          <div class="tier-label">Good — surfaces normally</div>
+          <div class="tier-badge" style="background:#ccfbf1;color:#0f766e;">Active</div>
+        </div>
+        <div class="score-tier">
+          <div class="tier-range" style="color:#F59E0B;">5.0 – 6.9</div>
+          <div class="tier-label">Needs work — amber flag visible</div>
+          <div class="tier-badge" style="background:#fef3c7;color:#92400e;">Caution</div>
+        </div>
+        <div class="score-tier">
+          <div class="tier-range" style="color:#EF4444;">Below 5</div>
+          <div class="tier-label">Suppressed — removed from discovery</div>
+          <div class="tier-badge" style="background:#fee2e2;color:#991b1b;">Hidden</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ANXIETY REMOVAL FEATURES -->
+<section style="background:#0A0A1A;padding:96px 24px;">
+  <div style="max-width:1100px;margin:0 auto;">
+    <p style="font-size:11px;font-weight:500;letter-spacing:3px;color:#0D9488;text-transform:uppercase;margin-bottom:16px;">What makes Intentional different</p>
+    <h2 style="font-family:Cormorant Garamond,Georgia,serif;font-size:clamp(32px,4vw,52px);font-weight:600;line-height:1.12;margin-bottom:20px;color:#fff;">Built to remove the anxiety<br>of not knowing.</h2>
+    <p style="font-size:17px;color:#A0B4C8;max-width:540px;line-height:1.65;font-weight:300;margin-bottom:56px;">Every feature on Intentional was designed around one question: what makes serious daters feel safe, respected, and clear about where they stand?</p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;">
+
+      <div style="background:rgba(13,148,136,0.06);border:0.5px solid rgba(13,148,136,0.2);border-radius:20px;padding:36px 32px;">
+        <div style="font-size:32px;margin-bottom:16px;">🟢</div>
+        <div style="font-size:11px;font-weight:600;letter-spacing:2px;color:#0D9488;text-transform:uppercase;margin-bottom:10px;">Transparency you can feel</div>
+        <h3 style="font-family:Cormorant Garamond,serif;font-size:24px;font-weight:600;color:#fff;margin-bottom:12px;line-height:1.2;">You always know where things stand.</h3>
+        <p style="font-size:14px;color:#A0B4C8;line-height:1.7;">Before you invest your time and your heart, you deserve to know where things actually stand. Intentional gives you that clarity before the first message is ever sent. The guesswork is gone. The anxiety is gone. What remains is connection with confidence.</p>
+      </div>
+
+      <div style="background:rgba(245,158,11,0.06);border:0.5px solid rgba(245,158,11,0.15);border-radius:20px;padding:36px 32px;">
+        <div style="font-size:32px;margin-bottom:16px;">🌴</div>
+        <div style="font-size:11px;font-weight:600;letter-spacing:2px;color:#F59E0B;text-transform:uppercase;margin-bottom:10px;">Life happens. We get it.</div>
+        <h3 style="font-family:Cormorant Garamond,serif;font-size:24px;font-weight:600;color:#fff;margin-bottom:12px;line-height:1.2;">Silence no longer means what you think.</h3>
+        <p style="font-size:14px;color:#A0B4C8;line-height:1.7;">On Intentional, silence means something specific — not what you think. Honest signals replace the unknown so the spiral never starts. Because the anxiety of not knowing is one of the most exhausting parts of modern dating. We removed it entirely.</p>
+      </div>
+
+      <div style="background:rgba(232,121,160,0.06);border:0.5px solid rgba(232,121,160,0.2);border-radius:20px;padding:36px 32px;">
+        <div style="font-size:32px;margin-bottom:16px;">🔁</div>
+        <div style="font-size:11px;font-weight:600;letter-spacing:2px;color:#E879A0;text-transform:uppercase;margin-bottom:10px;">What actually makes love last</div>
+        <h3 style="font-family:Cormorant Garamond,serif;font-size:24px;font-weight:600;color:#fff;margin-bottom:12px;line-height:1.2;">Match on your ability to repair.</h3>
+        <p style="font-size:14px;color:#A0B4C8;line-height:1.7;">Relationship researchers agree: the number of arguments a couple has doesn’t predict whether they last. What predicts it is the willingness to lean back in when things get hard. Intentional is the first app to match on this — and it changes everything about who you end up with.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- PRICING -->
+<section style="background:#0A0A1A;padding:80px 24px;border-top:0.5px solid rgba(13,148,136,0.15);border-bottom:0.5px solid rgba(13,148,136,0.15);" id="pricing">
+  <div style="max-width:900px;margin:0 auto;">
+
+    <p style="font-size:11px;font-weight:500;letter-spacing:3px;color:#0D9488;text-transform:uppercase;margin-bottom:14px;">Membership</p>
+    <h2 style="font-family:Cormorant Garamond,Georgia,serif;font-size:clamp(30px,4vw,48px);font-weight:600;line-height:1.12;color:#fff;margin-bottom:14px;">Simple. Transparent.<br>Built for people, not advertisers.</h2>
+    <p style="font-size:16px;color:#A0B4C8;line-height:1.65;font-weight:300;max-width:520px;margin-bottom:48px;">No ads. No data selling. Ever. Revenue comes from members only — which means our only incentive is helping you find the right person.</p>
+
+    <!-- Free + Founding Member side by side -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-bottom:28px;">
+
+      <!-- FREE -->
+      <div style="background:#1A1A2E;border:0.5px solid rgba(255,255,255,0.1);border-radius:20px;padding:32px 28px;">
+        <div style="font-size:10px;font-weight:700;letter-spacing:2px;color:#3D5A80;text-transform:uppercase;margin-bottom:12px;">Free — always</div>
+        <div style="font-size:32px;font-weight:700;color:#fff;margin-bottom:4px;">$0</div>
+        <div style="font-size:13px;color:#A0B4C8;margin-bottom:20px;">No credit card · No commitment</div>
+        <div style="border-top:0.5px solid rgba(255,255,255,0.07);padding-top:18px;display:flex;flex-direction:column;gap:10px;">
+          <div style="font-size:13px;color:#A0B4C8;">✓ &nbsp;Create your full verified profile</div>
+          <div style="font-size:13px;color:#A0B4C8;">✓ &nbsp;See your compatibility scores</div>
+          <div style="font-size:13px;color:#A0B4C8;">✓ &nbsp;Browse your curated candidate pool</div>
+          <div style="font-size:13px;color:#A0B4C8;">– &nbsp;Cannot initiate contact</div>
+          <div style="font-size:13px;color:#A0B4C8;">– &nbsp;3 profile views per day</div>
+        </div>
+        <div style="margin-top:20px;padding:10px 16px;background:rgba(13,148,136,0.08);border:0.5px solid rgba(13,148,136,0.2);border-radius:10px;font-size:12px;color:#A0B4C8;line-height:1.6;">
+          Join free. Build your profile. When Intentional launches in your city you're already in the pool — verified and ahead of everyone who waited.
+        </div>
+      </div>
+
+      <!-- FOUNDING MEMBER -->
+      <div style="background:linear-gradient(135deg,#111122,#1A1A2E);border:2px solid #F59E0B;border-radius:20px;padding:32px 28px;position:relative;overflow:hidden;box-shadow:0 0 40px rgba(245,158,11,0.08);">
+        <div style="position:absolute;top:-50px;right:-50px;width:160px;height:160px;background:radial-gradient(circle,rgba(245,158,11,0.12),transparent);pointer-events:none;"></div>
+
+        <div style="display:inline-block;padding:4px 12px;border-radius:100px;background:linear-gradient(135deg,#F59E0B,#E8870A);font-size:10px;font-weight:700;letter-spacing:2px;color:#111122;text-transform:uppercase;margin-bottom:4px;">✦ Founding Member</div>
+        <div style="font-size:10px;font-weight:600;letter-spacing:2px;color:#F59E0B;text-transform:uppercase;margin-bottom:12px;">Cohort Alpha</div>
+
+        <div style="font-size:32px;font-weight:700;color:#F59E0B;margin-bottom:4px;">$20<span style="font-size:14px;font-weight:400;color:#A0B4C8;"> / month</span></div>
+        <div style="font-size:13px;color:#F59E0B;margin-bottom:4px;font-weight:600;">Locked at this rate forever.</div>
+        <div style="font-size:12px;color:#A0B4C8;margin-bottom:20px;">Full Intentional+ access · First 500 only</div>
+
+        <div style="border-top:0.5px solid rgba(245,158,11,0.2);padding-top:18px;display:flex;flex-direction:column;gap:10px;">
+          <div style="font-size:13px;color:#fff;">✦ &nbsp;All Intentional+ premium features</div>
+          <div style="font-size:13px;color:#fff;">✦ &nbsp;8 active connection slots</div>
+          <div style="font-size:13px;color:#fff;">✦ &nbsp;Priority match queue</div>
+          <div style="font-size:13px;color:#fff;">✦ &nbsp;See who viewed your profile</div>
+          <div style="font-size:13px;color:#F59E0B;font-weight:600;">✦ &nbsp;Gold Founding Member badge — permanent</div>
+          <div style="font-size:13px;color:#F59E0B;font-weight:600;">✦ &nbsp;This price never increases · Ever</div>
+        </div>
+
+        <a href="#apply" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'});return false;"
+          style="display:block;text-align:center;margin-top:24px;padding:14px;
+          background:linear-gradient(135deg,#F59E0B,#E8870A);color:#111122;
+          border-radius:100px;font-size:13px;font-weight:700;text-decoration:none;letter-spacing:0.3px;">
+          Apply for Founding Member access →
+        </a>
+
+        <!-- Spot counter -->
+        <div style="margin-top:14px;text-align:center;">
+          <div style="background:rgba(245,158,11,0.08);border:0.5px solid rgba(245,158,11,0.2);border-radius:8px;padding:8px 14px;display:inline-block;">
+            <span style="font-size:11px;color:#F59E0B;font-weight:600;">500 spots · First come, first admitted · Gone when they're gone</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Full pricing note -->
+    <div style="text-align:center;padding:18px 24px;background:rgba(255,255,255,0.02);border:0.5px solid rgba(255,255,255,0.06);border-radius:12px;">
+      <p style="margin:0;font-size:13px;color:#A0B4C8;line-height:1.6;">
+        Full membership tiers — including monthly and multi-month plans for Intentional and Intentional+ — will be revealed at launch.
+        <span style="color:#A0B4C8;"> Cohort Alpha Founding Members are locked at $20/month — forever, regardless of which plan structure launches at full release.</span>
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta-section" id="apply">
+  <div class="container" style="max-width:640px;">
+    <p class="section-label" style="text-align:center;">Founding Member Application</p>
+    <h2 class="section-headline" style="text-align:center;">
+      Ready to date<br>
+      <span class="cta-shimmer">with intention?</span>
+    </h2>
+    <p class="section-sub" style="text-align:center;margin:0 auto 24px;">
+      This is not a sign-up form. It's an application. We read every one — and we select Cohort Alpha members based on the sincerity and depth of your answers.
+    </p>
+
+    <!-- City tier note -->
+    <div style="text-align:center;margin-bottom:28px;">
+      <div style="display:inline-block;padding:10px 20px;background:rgba(13,148,136,0.08);border:0.5px solid rgba(13,148,136,0.2);border-radius:12px;">
+        <div style="font-size:12px;color:#0D9488;font-weight:600;letter-spacing:1px;text-transform:uppercase;">2026 Launch Cities</div>
+        <div style="font-size:13px;color:#A0B4C8;margin-top:4px;">Phoenix · New York · Austin</div>
+        <div style="font-size:12px;color:#A0B4C8;margin-top:6px;line-height:1.6;">Building communities in cities across the US.<br>Not in a launch city? Apply now and be first on your city's founding list.</div>
+      </div>
+    </div>
+
+    <div class="cta-form" id="cta-form">
+
+      <!-- Contact info -->
+      <input class="cta-input" type="text" placeholder="Full name" id="cta-name" autocomplete="name">
+      <input class="cta-input" type="email" placeholder="Email address" id="cta-email" autocomplete="email">
+      <input class="cta-input" type="tel" placeholder="Phone number (optional — required when you activate your membership)" id="cta-phone" autocomplete="tel">
+
+      <!-- City dropdown -->
+      <select class="cta-input" id="cta-city" style="color:#A0B4C8;background:#1A1A2E;appearance:none;-webkit-appearance:none;cursor:pointer;">
+        <option value="" disabled selected style="color:#A0B4C8;">Select your city</option>
+        <optgroup label="2026 Launch Cities — Cohort Alpha eligible">
+          <option value="Phoenix">Phoenix, AZ</option>
+          <option value="New York">New York, NY</option>
+          <option value="Austin">Austin, TX</option>
+        </optgroup>
+        <optgroup label="Coming Soon — Join your city's founding list">
+          <option value="Los Angeles">Los Angeles, CA</option>
+          <option value="Chicago">Chicago, IL</option>
+          <option value="Dallas">Dallas, TX</option>
+          <option value="Miami">Miami, FL</option>
+          <option value="Seattle">Seattle, WA</option>
+          <option value="Denver">Denver, CO</option>
+          <option value="Atlanta">Atlanta, GA</option>
+          <option value="Boston">Boston, MA</option>
+          <option value="Nashville">Nashville, TN</option>
+          <option value="San Francisco">San Francisco, CA</option>
+        </optgroup>
+        <optgroup label="Other">
+          <option value="Other">My city isn't listed</option>
+        </optgroup>
+      </select>
+
+      <!-- Other city field — shown conditionally -->
+      <input class="cta-input" type="text" placeholder="Tell us your city" id="cta-city-other" autocomplete="off" style="display:none;">
+
+      <!-- Q1 -->
+      <div style="margin-top:8px;">
+        <div style="font-size:11px;color:#0D9488;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;">Question 1 of 4</div>
+        <textarea class="cta-input" rows="3" placeholder="What does dating intentionally mean to you?" id="cta-q1" style="border-radius:20px;resize:none;"></textarea>
+      </div>
+
+      <!-- Q2 -->
+      <div style="margin-top:8px;">
+        <div style="font-size:11px;color:#0D9488;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;">Question 2 of 4</div>
+        <textarea class="cta-input" rows="3" placeholder="What has your experience on dating apps actually been like?" id="cta-q2" style="border-radius:20px;resize:none;"></textarea>
+      </div>
+
+      <!-- Q3 -->
+      <div style="margin-top:8px;">
+        <div style="font-size:11px;color:#0D9488;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;">Question 3 of 4</div>
+        <textarea class="cta-input" rows="3" placeholder="What are you specifically looking for in a long-term partner?" id="cta-q3" style="border-radius:20px;resize:none;"></textarea>
+      </div>
+
+      <!-- Q4 -->
+      <div style="margin-top:8px;">
+        <div style="font-size:11px;color:#0D9488;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;">Question 4 of 4</div>
+        <textarea class="cta-input" rows="3" placeholder="How do you typically handle conflict in a relationship?" id="cta-q4" style="border-radius:20px;resize:none;"></textarea>
+      </div>
+
+      <!-- Opt-ins -->
+      <div style="margin-top:20px;padding:20px;background:rgba(13,148,136,0.06);border:0.5px solid rgba(13,148,136,0.2);border-radius:16px;">
+        <div style="font-size:12px;color:#0D9488;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;">Stay connected</div>
+        <label style="display:flex;align-items:flex-start;gap:12px;cursor:pointer;margin-bottom:12px;">
+          <input type="checkbox" id="opt-sms" style="margin-top:3px;accent-color:#0D9488;width:16px;height:16px;flex-shrink:0;">
+          <span style="font-size:13px;color:#A0B4C8;line-height:1.6;">Text me launch updates for my city <span style="color:#666;font-size:12px;">(SMS · standard rates may apply)</span></span>
+        </label>
+        <label style="display:flex;align-items:flex-start;gap:12px;cursor:pointer;">
+          <input type="checkbox" id="opt-newsletter" style="margin-top:3px;accent-color:#0D9488;width:16px;height:16px;flex-shrink:0;">
+          <span style="font-size:13px;color:#A0B4C8;line-height:1.6;">Send me the Intentional newsletter — dating insights, relationship advice, and app updates</span>
+        </label>
+      </div>
+
+      <button class="cta-btn" onclick="submitWaitlist('cta')" style="margin-top:20px;">Submit my Founding Member application →</button>
+      <p style="font-size:12px;color:#506070;text-align:center;margin-top:12px;line-height:1.6;">By submitting you agree to our <a href="#" style="color:#0D9488;text-decoration:none;">Privacy Policy</a> and <a href="#" style="color:#0D9488;text-decoration:none;">Terms</a>. No spam. No selling your data. Ever.</p>
+    </div>
+
+    <div class="success-box" id="cta-success" style="margin-top:24px;">
+      <div class="success-icon">💜</div>
+      <div class="success-title">Application received.</div>
+      <div class="success-body">We read every application. We'll be in touch when Intentional opens in your city. You're early — and that means something here. Watch your inbox.</div>
+      <div class="success-badge">✦ Founding Member Application Submitted</div>
+    </div>
+
+    <p class="cta-micro">No spam. No selling your data. Ever. <span>intentionaldating.app</span></p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">INTENTIONAL<span>.</span></div>
+  <div class="footer-social">
+    <a href="https://instagram.com/TheIntentionalDatingApp" class="social-link" target="_blank">Instagram</a>
+    <a href="https://tiktok.com/@TheIntentionalDatingApp" class="social-link" target="_blank">TikTok</a>
+    <a href="https://facebook.com/TheIntentionalDatingApp" class="social-link" target="_blank">Facebook</a>
+  </div>
+  <div class="footer-links">
+    <a href="#">Privacy</a>
+    <a href="#">Terms</a>
+    <a href="mailto:hello@intentionaldating.app">Contact</a>
+  </div>
+  <div class="footer-copy">© 2026 Firesign Holdings LLC. All rights reserved. Intentional™ is a trademark of Firesign Holdings LLC · intentionaldating.app · intentionaldatingapp.com</div>
+</footer>
+
+<script>
+// Show/hide other city field
+document.getElementById('cta-city').addEventListener('change', function() {
+  const otherField = document.getElementById('cta-city-other');
+  otherField.style.display = this.value === 'Other' ? 'block' : 'none';
+});
+
+const LAUNCH_CITIES = ['Phoenix', 'New York', 'Austin'];
+const COMING_SOON = ['Los Angeles','Chicago','Dallas','Miami','Seattle','Denver','Atlanta','Boston','Nashville','San Francisco'];
+
+function getCityTier(city) {
+  if (LAUNCH_CITIES.includes(city)) return 'Launch';
+  if (COMING_SOON.includes(city)) return 'Coming Soon';
+  return 'Unlisted';
+}
+
+async function submitWaitlist(type) {
+  const email = document.getElementById(type === 'hero' ? 'hero-email' : 'cta-email').value.trim();
+  if (!email || !email.includes('@')) {
+    document.getElementById(type === 'hero' ? 'hero-email' : 'cta-email').style.borderColor = '#EF4444';
+    return;
+  }
+
+  if (type === 'cta') {
+    const name = document.getElementById('cta-name').value.trim();
+    const cityVal = document.getElementById('cta-city').value;
+    const q1 = document.getElementById('cta-q1').value.trim();
+    const q2 = document.getElementById('cta-q2').value.trim();
+    const q3 = document.getElementById('cta-q3').value.trim();
+    const q4 = document.getElementById('cta-q4').value.trim();
+
+    if (!name) { document.getElementById('cta-name').style.borderColor = '#EF4444'; return; }
+    if (!cityVal) { document.getElementById('cta-city').style.borderColor = '#EF4444'; return; }
+    if (!q1 || !q2 || !q3 || !q4) {
+      alert('Please answer all four questions — they are the heart of your application.');
+      return;
+    }
+
+    const city = cityVal === 'Other' ? (document.getElementById('cta-city-other').value.trim() || 'Other') : cityVal;
+    const phone = document.getElementById('cta-phone').value.trim();
+    const optSms = document.getElementById('opt-sms').checked ? 'Yes' : 'No';
+    const optNewsletter = document.getElementById('opt-newsletter').checked ? 'Yes' : 'No';
+    const cityTier = getCityTier(city);
+
+    const btn = document.querySelector('.cta-btn');
+    btn.textContent = 'Submitting...'; btn.disabled = true;
+
+    try {
+      const res = await fetch('/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, phone, city, cityTier, optSms, optNewsletter, q1, q2, q3, q4 })
+      });
+      const data = await res.json();
+      if (data.success) {
+        document.getElementById('cta-form').style.display = 'none';
+        document.getElementById('cta-success').classList.add('visible');
+      } else {
+        alert('Something went wrong. Please try again.');
+        btn.textContent = 'Submit my Founding Member application →'; btn.disabled = false;
+      }
+    } catch (err) {
+      document.getElementById('cta-form').style.display = 'none';
+      document.getElementById('cta-success').classList.add('visible');
+    }
+
+  } else {
+    // Hero form — email only
+    const btn = document.querySelector('.hero-btn');
+    if (btn) { btn.textContent = 'Submitting...'; btn.disabled = true; }
+    try {
+      const res = await fetch('/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: '', email, phone: '', city: '', cityTier: '', optSms: 'No', optNewsletter: 'No', q1: '', q2: '', q3: '', q4: '' })
+      });
+      const data = await res.json();
+      document.getElementById('hero-form').style.display = 'none';
+      document.getElementById('hero-success').classList.add('visible');
+    } catch (err) {
+      document.getElementById('hero-form').style.display = 'none';
+      document.getElementById('hero-success').classList.add('visible');
+    }
+  }
+}
+// Smooth scroll for nav CTA
+document.querySelector('.nav-cta').addEventListener('click', function(e) {
+  e.preventDefault();
+  document.getElementById('apply').scrollIntoView({ behavior: 'smooth' });
+});
+</script>
+</body>
+</html>
