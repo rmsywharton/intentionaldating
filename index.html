@@ -1142,7 +1142,7 @@ async function submitWaitlist(type) {
     btn.textContent = 'Submitting...'; btn.disabled = true;
 
     try {
-      const res = await fetch('/submit', {
+      const res = await fetch('https://script.google.com/macros/s/AKfycbwJvoCkAWhRj-d7Hnw_dDV5ry3rB6PqhJ7XMq38bKyWWdQdvHyvBl_5GTpDs5k0kygNzQ/exec', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, email, phone, city, cityTier, optSms, optNewsletter, q1, q2, q3, q4 })
@@ -1165,7 +1165,7 @@ async function submitWaitlist(type) {
     const btn = document.querySelector('.hero-btn');
     if (btn) { btn.textContent = 'Submitting...'; btn.disabled = true; }
     try {
-      const res = await fetch('/submit', {
+      const res = await fetch('https://script.google.com/macros/s/AKfycbwJvoCkAWhRj-d7Hnw_dDV5ry3rB6PqhJ7XMq38bKyWWdQdvHyvBl_5GTpDs5k0kygNzQ/exec', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name: '', email, phone: '', city: '', cityTier: '', optSms: 'No', optNewsletter: 'No', q1: '', q2: '', q3: '', q4: '' })
