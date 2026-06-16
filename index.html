@@ -1166,7 +1166,7 @@ async function submitWaitlist(type) {
     const btn = document.querySelector('.hero-btn');
     if (btn) { btn.textContent = 'Submitting...'; btn.disabled = true; }
     try {
-      const res = await fetch('https://script.google.com/macros/s/AKfycbwqwJSaCds8H7FevajUpdBDHSguG7uZBR2RGRPG4lgIBIGgUPdj-fKsvpvKf9Ssu7pTLw/exec, {
+      const res = await fetch('https://script.google.com/macros/s/AKfycbwqwJSaCds8H7FevajUpdBDHSguG7uZBR2RGRPG4lgIBIGgUPdj-fKsvpvKf9Ssu7pTLw/exec', {
         method: 'POST',
         mode: 'no-cors',
         headers: { 'Content-Type': 'application/json' },
