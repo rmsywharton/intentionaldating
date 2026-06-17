@@ -7,9 +7,18 @@
 <meta name="copyright" content="© 2026 Firesign Holdings LLC. All rights reserved.">
 <meta name="author" content="Firesign Holdings LLC">
 <meta name="description" content="The dating app built for people who are done playing games. No ghosting. Verified identity. 35+ compatibility dimensions. Join the waitlist.">
-<meta property="og:title" content="Intentional Dating App — Join the Waitlist">
-<meta property="og:description" content="For people who are serious about finding real love. No ghosting. No fake profiles. Just real compatibility and real connection.">
+<meta property="og:title" content="Intentional — Date with Intention.">
+<meta property="og:description" content="A transformative dating experience. The No-Ghost Standard™. 35 Points of Connection™. Join the waitlist.">
 <meta property="og:url" content="https://intentionaldating.app">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://intentionaldating.app/assets/intentional_og_image_HQ.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Intentional — Date with Intention.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Intentional — Date with Intention.">
+<meta name="twitter:description" content="A transformative dating experience. The No-Ghost Standard™. 35 Points of Connection™. Join the waitlist.">
+<meta name="twitter:image" content="https://intentionaldating.app/assets/intentional_og_image_HQ.png">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap');
 
@@ -151,23 +160,19 @@
     line-height: 1.65;
     animation: fadeUp 0.8s ease both 0.6s;
   }
-  .hero-form {
-    display: flex; gap: 10px; flex-wrap: wrap;
-    justify-content: center; max-width: 500px; width: 100%;
+  .hero-founder-callout {
+    display: flex; flex-direction: column; align-items: center; gap: 18px;
+    max-width: 520px; width: 100%;
     animation: fadeUp 0.8s ease both 0.8s;
   }
-  .hero-input {
-    flex: 1; min-width: 240px;
-    padding: 16px 22px;
-    background: rgba(255,255,255,0.06);
-    border: 0.5px solid var(--border);
-    border-radius: 100px; color: var(--white);
-    font-size: 14px; font-family: 'Inter', sans-serif;
-    outline: none;
-    transition: border-color 0.2s, background 0.2s;
+  .hero-founder-line {
+    font-size: 15px; line-height: 1.6; color: var(--text-dim);
+    font-family: 'Inter', sans-serif;
   }
-  .hero-input::placeholder { color: var(--text-muted); }
-  .hero-input:focus { border-color: var(--teal); background: rgba(13,148,136,0.08); }
+  .hero-founder-highlight { color: var(--gold); font-weight: 600; }
+  .hero-founder-btn {
+    display: inline-block; text-decoration: none;
+  }
   .hero-btn {
     padding: 16px 32px;
     background: var(--teal); color: var(--white);
@@ -495,11 +500,19 @@
     Dating on an app is hard because you're not getting the depth. Intentional was built differently — with questions that go deeper than any other app dares to ask, and a transparency system that means you always know where you stand. Let us connect you.
   </p>
 
-  <div class="hero-form" id="hero-form">
-    <button class="hero-btn" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'});return false;">Apply for access</button>
+  <div class="hero-founder-callout" id="hero-founder-callout">
+    <p class="hero-founder-line">
+      <span class="hero-founder-highlight">We're accepting applications for Founding Members.</span><br>
+      The first 500 make up Cohort Alpha, with Charter Members rounding out our founding era. Each tier locks in its own rate — for as long as you're on the app.
+    </p>
+    <a href="#apply" class="hero-btn hero-founder-btn" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'});return false;">Apply for Founding Member access →</a>
   </div>
 
   <p class="hero-micro">Free to apply · <span>Limited Founding Member spots</span> · No credit card required</p>
+
+  <p style="margin-top:20px;animation:fadeUp 0.8s ease both 1.1s;">
+    <a href="#apply" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'});return false;" style="font-size:12px;color:var(--teal);text-decoration:none;border-bottom:0.5px solid rgba(13,148,136,0.4);padding-bottom:2px;">Already know you want in? Jump to the application ↓</a>
+  </p>
 </section>
 
 
@@ -902,7 +915,7 @@
     <h2 style="font-family:Cormorant Garamond,Georgia,serif;font-size:clamp(30px,4vw,48px);font-weight:600;line-height:1.12;color:#fff;margin-bottom:14px;">Simple. Transparent.<br>Built for people, not advertisers.</h2>
     <p style="font-size:16px;color:#A0B4C8;line-height:1.65;font-weight:300;max-width:520px;margin-bottom:48px;">No ads. No data selling. Ever. Revenue comes from members only — which means our only incentive is helping you find the right person.</p>
 
-    <!-- Free + Founding Member side by side -->
+    <!-- Free + Cohort Alpha + Charter Member side by side -->
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-bottom:28px;">
 
       <!-- FREE -->
@@ -913,9 +926,9 @@
         <div style="border-top:0.5px solid rgba(255,255,255,0.07);padding-top:18px;display:flex;flex-direction:column;gap:10px;">
           <div style="font-size:13px;color:#A0B4C8;">✓ &nbsp;Create your full verified profile</div>
           <div style="font-size:13px;color:#A0B4C8;">✓ &nbsp;See your compatibility scores</div>
-          <div style="font-size:13px;color:#A0B4C8;">✓ &nbsp;Browse your curated candidate pool</div>
-          <div style="font-size:13px;color:#A0B4C8;">– &nbsp;Cannot initiate contact</div>
-          <div style="font-size:13px;color:#A0B4C8;">– &nbsp;3 profile views per day</div>
+          <div style="font-size:13px;color:#A0B4C8;">✓ &nbsp;Full visibility in your matched pool</div>
+          <div style="font-size:13px;color:#A0B4C8;">✓ &nbsp;3 active connection slots</div>
+          <div style="font-size:13px;color:#A0B4C8;">✓ &nbsp;Standard match queue</div>
         </div>
         <div style="margin-top:20px;padding:10px 16px;background:rgba(13,148,136,0.08);border:0.5px solid rgba(13,148,136,0.2);border-radius:10px;font-size:12px;color:#A0B4C8;line-height:1.6;">
           Join free. Build your profile. When Intentional launches in your city you're already in the pool — verified and ahead of everyone who waited.
@@ -930,40 +943,72 @@
         <div style="font-size:10px;font-weight:600;letter-spacing:2px;color:#F59E0B;text-transform:uppercase;margin-bottom:12px;">Cohort Alpha</div>
 
         <div style="font-size:32px;font-weight:700;color:#F59E0B;margin-bottom:4px;">$20<span style="font-size:14px;font-weight:400;color:#A0B4C8;"> / month</span></div>
-        <div style="font-size:13px;color:#F59E0B;margin-bottom:4px;font-weight:600;">Locked at this rate forever.</div>
-        <div style="font-size:12px;color:#A0B4C8;margin-bottom:20px;">Full Intentional+ access · First 500 only</div>
+        <div style="font-size:12px;color:#F59E0B;font-weight:700;letter-spacing:0.3px;margin-bottom:8px;">(Special Founding Member Price)</div>
+        <div style="font-size:13px;color:#F59E0B;margin-bottom:4px;font-weight:600;">Locked in for as long as you're on the app.</div>
+        <div style="font-size:12px;color:#A0B4C8;margin-bottom:20px;">Early-bird rate on Intentional+ (launches at $30/month) · First 500 only</div>
 
         <div style="border-top:0.5px solid rgba(245,158,11,0.2);padding-top:18px;display:flex;flex-direction:column;gap:10px;">
           <div style="font-size:13px;color:#fff;">✦ &nbsp;All Intentional+ premium features</div>
-          <div style="font-size:13px;color:#fff;">✦ &nbsp;8 active connection slots</div>
+          <div style="font-size:13px;color:#fff;">✦ &nbsp;5 active connection slots</div>
           <div style="font-size:13px;color:#fff;">✦ &nbsp;Priority match queue</div>
-          <div style="font-size:13px;color:#fff;">✦ &nbsp;See who viewed your profile</div>
+          <div style="font-size:13px;color:#fff;">✦ &nbsp;See who's already added you to their list</div>
           <div style="font-size:13px;color:#F59E0B;font-weight:600;">✦ &nbsp;Gold Founding Member badge — permanent</div>
-          <div style="font-size:13px;color:#F59E0B;font-weight:600;">✦ &nbsp;This price never increases · Ever</div>
+          <div style="font-size:13px;color:#F59E0B;font-weight:600;">✦ &nbsp;Your rate locked in, no increases</div>
         </div>
 
-        <a href="#apply" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'});return false;"
-          style="display:block;text-align:center;margin-top:24px;padding:14px;
-          background:linear-gradient(135deg,#F59E0B,#E8870A);color:#111122;
-          border-radius:100px;font-size:13px;font-weight:700;text-decoration:none;letter-spacing:0.3px;">
-          Apply for Founding Member access →
-        </a>
+        <!-- Spot counter -->
+        <div style="margin-top:20px;text-align:center;">
+          <div style="background:rgba(245,158,11,0.08);border:0.5px solid rgba(245,158,11,0.2);border-radius:8px;padding:8px 14px;display:inline-block;">
+            <span style="font-size:11px;color:#F59E0B;font-weight:600;">500 spots · First come, first admitted · Charter Membership opens after</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CHARTER MEMBER -->
+      <div style="background:linear-gradient(135deg,#111122,#1A1A2E);border:2px solid #A0B4C8;border-radius:20px;padding:32px 28px;position:relative;overflow:hidden;">
+
+        <div style="display:inline-block;padding:4px 12px;border-radius:100px;background:linear-gradient(135deg,#C7D2DD,#A0B4C8);font-size:10px;font-weight:700;letter-spacing:2px;color:#111122;text-transform:uppercase;margin-bottom:4px;">✦ Founding Member</div>
+        <div style="font-size:10px;font-weight:600;letter-spacing:2px;color:#C7D2DD;text-transform:uppercase;margin-bottom:12px;">Charter Member</div>
+
+        <div style="font-size:32px;font-weight:700;color:#C7D2DD;margin-bottom:4px;">$25<span style="font-size:14px;font-weight:400;color:#A0B4C8;"> / month</span></div>
+        <div style="font-size:12px;color:#C7D2DD;font-weight:700;letter-spacing:0.3px;margin-bottom:8px;">(Special Founding Member Price)</div>
+        <div style="font-size:13px;color:#C7D2DD;margin-bottom:4px;font-weight:600;">Locked in for as long as you're on the app.</div>
+        <div style="font-size:12px;color:#A0B4C8;margin-bottom:20px;">Early-bird rate on Intentional+ (launches at $30/month) · Applicants 501–5,000</div>
+
+        <div style="border-top:0.5px solid rgba(160,180,200,0.2);padding-top:18px;display:flex;flex-direction:column;gap:10px;">
+          <div style="font-size:13px;color:#fff;">✦ &nbsp;All Intentional+ premium features</div>
+          <div style="font-size:13px;color:#fff;">✦ &nbsp;5 active connection slots</div>
+          <div style="font-size:13px;color:#fff;">✦ &nbsp;Priority match queue</div>
+          <div style="font-size:13px;color:#fff;">✦ &nbsp;See who's already added you to their list</div>
+          <div style="font-size:13px;color:#C7D2DD;font-weight:600;">✦ &nbsp;Silver Founding Member badge — permanent</div>
+          <div style="font-size:13px;color:#C7D2DD;font-weight:600;">✦ &nbsp;Your rate locked in, no increases</div>
+        </div>
 
         <!-- Spot counter -->
-        <div style="margin-top:14px;text-align:center;">
-          <div style="background:rgba(245,158,11,0.08);border:0.5px solid rgba(245,158,11,0.2);border-radius:8px;padding:8px 14px;display:inline-block;">
-            <span style="font-size:11px;color:#F59E0B;font-weight:600;">500 spots · First come, first admitted · Gone when they're gone</span>
+        <div style="margin-top:20px;text-align:center;">
+          <div style="background:rgba(160,180,200,0.08);border:0.5px solid rgba(160,180,200,0.2);border-radius:8px;padding:8px 14px;display:inline-block;">
+            <span style="font-size:11px;color:#C7D2DD;font-weight:600;">4,500 spots · Still founding-era pricing</span>
           </div>
         </div>
       </div>
 
     </div>
 
+    <!-- Master CTA — one button, tier is assigned by application order -->
+    <div style="text-align:center;margin-bottom:28px;">
+      <a href="#apply" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'});return false;"
+        style="display:inline-block;padding:16px 40px;
+        background:linear-gradient(135deg,#F59E0B,#E8870A);color:#111122;
+        border-radius:100px;font-size:14px;font-weight:700;text-decoration:none;letter-spacing:0.3px;">
+        Apply for Founding Member access →
+      </a>
+      <p style="margin-top:12px;font-size:12px;color:#A0B4C8;">Your tier is assigned by application order — no need to choose.</p>
+    </div>
+
     <!-- Full pricing note -->
     <div style="text-align:center;padding:18px 24px;background:rgba(255,255,255,0.02);border:0.5px solid rgba(255,255,255,0.06);border-radius:12px;">
       <p style="margin:0;font-size:13px;color:#A0B4C8;line-height:1.6;">
-        Full membership tiers — including monthly and multi-month plans for Intentional and Intentional+ — will be revealed at launch.
-        <span style="color:#A0B4C8;"> Cohort Alpha Founding Members are locked at $20/month — forever, regardless of which plan structure launches at full release.</span>
+        Full Intentional+ launches at $30/month. Founding Member rates — Cohort Alpha at $20/month, Charter Members at $25/month — are early-bird pricing for the same Intentional+ features, locked in for as long as you remain on the app.
       </p>
     </div>
 
@@ -1063,7 +1108,7 @@
         </label>
       </div>
 
-      <button class="cta-btn" onclick="submitWaitlist('cta')" style="margin-top:20px;">Submit my Founding Member application →</button>
+      <button class="cta-btn" onclick="submitWaitlist()" style="margin-top:20px;">Submit my Founding Member application →</button>
       <p style="font-size:12px;color:#506070;text-align:center;margin-top:12px;line-height:1.6;">By submitting you agree to our <a href="#" style="color:#0D9488;text-decoration:none;">Privacy Policy</a> and <a href="#" style="color:#0D9488;text-decoration:none;">Terms</a>. No spam. No selling your data. Ever.</p>
     </div>
 
@@ -1078,21 +1123,20 @@
   </div>
 </section>
 
-<!-- FOOTER --> 
-<footer> 
-  <div class="footer-logo">INTENTIONAL<span>.</span></div> 
-  <div class="footer-social"> 
-    <a href="https://www.instagram.com/theintentionaldatingapp" class="social-link" target="_blank">Instagram</a> 
-    <a href="https://tiktok.com/@theintentionaldatingapp" class="social-link" target="_blank">TikTok</a> 
-    <a href="https://www.facebook.com/profile.php?id=61590628567097" class="social-link" target="_blank">Facebook</a>
-    <a href="https://x.com/intentldating" class="social-link" target="_blank">X</a>
-  </div> 
-  <div class="footer-links"> 
-    <a href="https://intentionaldating.app/privacy" target="_blank">Privacy Policy</a> 
-    <a href="https://intentionaldating.app/terms" target="_blank">Terms</a> 
-    <a href="mailto:info@intentionaldating.app">Contact</a> 
-  </div> 
-  <div class="footer-copy">© 2026 Firesign Holdings LLC. All rights reserved. Intentional™ is a trademark of Firesign Holdings LLC · intentionaldating.app · theintentionaldatingapp.com</div> 
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">INTENTIONAL<span>.</span></div>
+  <div class="footer-social">
+    <a href="https://instagram.com/TheIntentionalDatingApp" class="social-link" target="_blank">Instagram</a>
+    <a href="https://tiktok.com/@TheIntentionalDatingApp" class="social-link" target="_blank">TikTok</a>
+    <a href="https://facebook.com/TheIntentionalDatingApp" class="social-link" target="_blank">Facebook</a>
+  </div>
+  <div class="footer-links">
+    <a href="#">Privacy</a>
+    <a href="#">Terms</a>
+    <a href="mailto:hello@intentionaldating.app">Contact</a>
+  </div>
+  <div class="footer-copy">© 2026 Firesign Holdings LLC. All rights reserved. Intentional™ is a trademark of Firesign Holdings LLC · intentionaldating.app · intentionaldatingapp.com</div>
 </footer>
 
 <script>
@@ -1111,68 +1155,53 @@ function getCityTier(city) {
   return 'Unlisted';
 }
 
-async function submitWaitlist(type) {
-  const email = document.getElementById(type === 'hero' ? 'hero-email' : 'cta-email').value.trim();
+async function submitWaitlist() {
+  const email = document.getElementById('cta-email').value.trim();
   if (!email || !email.includes('@')) {
-    document.getElementById(type === 'hero' ? 'hero-email' : 'cta-email').style.borderColor = '#EF4444';
+    document.getElementById('cta-email').style.borderColor = '#EF4444';
     return;
   }
 
-  if (type === 'cta') {
-    const name = document.getElementById('cta-name').value.trim();
-    const cityVal = document.getElementById('cta-city').value;
-    const q1 = document.getElementById('cta-q1').value.trim();
-    const q2 = document.getElementById('cta-q2').value.trim();
-    const q3 = document.getElementById('cta-q3').value.trim();
-    const q4 = document.getElementById('cta-q4').value.trim();
+  const name = document.getElementById('cta-name').value.trim();
+  const cityVal = document.getElementById('cta-city').value;
+  const q1 = document.getElementById('cta-q1').value.trim();
+  const q2 = document.getElementById('cta-q2').value.trim();
+  const q3 = document.getElementById('cta-q3').value.trim();
+  const q4 = document.getElementById('cta-q4').value.trim();
 
-    if (!name) { document.getElementById('cta-name').style.borderColor = '#EF4444'; return; }
-    if (!cityVal) { document.getElementById('cta-city').style.borderColor = '#EF4444'; return; }
-    if (!q1 || !q2 || !q3 || !q4) {
-      alert('Please answer all four questions — they are the heart of your application.');
-      return;
-    }
+  if (!name) { document.getElementById('cta-name').style.borderColor = '#EF4444'; return; }
+  if (!cityVal) { document.getElementById('cta-city').style.borderColor = '#EF4444'; return; }
+  if (!q1 || !q2 || !q3 || !q4) {
+    alert('Please answer all four questions — they are the heart of your application.');
+    return;
+  }
 
-    const city = cityVal === 'Other' ? (document.getElementById('cta-city-other').value.trim() || 'Other') : cityVal;
-    const phone = document.getElementById('cta-phone').value.trim();
-    const optSms = document.getElementById('opt-sms').checked ? 'Yes' : 'No';
-    const optNewsletter = document.getElementById('opt-newsletter').checked ? 'Yes' : 'No';
-    const cityTier = getCityTier(city);
+  const city = cityVal === 'Other' ? (document.getElementById('cta-city-other').value.trim() || 'Other') : cityVal;
+  const phone = document.getElementById('cta-phone').value.trim();
+  const optSms = document.getElementById('opt-sms').checked ? 'Yes' : 'No';
+  const optNewsletter = document.getElementById('opt-newsletter').checked ? 'Yes' : 'No';
+  const cityTier = getCityTier(city);
 
-    const btn = document.querySelector('.cta-btn');
-    btn.textContent = 'Submitting...'; btn.disabled = true;
+  const btn = document.querySelector('.cta-btn');
+  btn.textContent = 'Submitting...'; btn.disabled = true;
 
-    // Fire-and-forget to Apps Script — no-cors means we can't read the response,
-    // but the sheet logs and Resend email both fire server-side regardless.
-    fetch('https://script.google.com/macros/s/AKfycbwqwJSaCds8H7FevajUpdBDHSguG7uZBR2RGRPG4lgIBIGgUPdj-fKsvpvKf9Ssu7pTLw/exec', {
+  try {
+    const res = await fetch('/submit', {
       method: 'POST',
-      mode: 'no-cors',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name, email, phone, city, cityTier, optSms, optNewsletter, q1, q2, q3, q4 })
     });
-
-    // Show success immediately — Apps Script handles the rest in the background
-    setTimeout(function() {
+    const data = await res.json();
+    if (data.success) {
       document.getElementById('cta-form').style.display = 'none';
       document.getElementById('cta-success').classList.add('visible');
-    }, 800);
-
-  } else {
-    // Hero form — email only
-    const btn = document.querySelector('.hero-btn');
-    if (btn) { btn.textContent = 'Submitting...'; btn.disabled = true; }
-
-    fetch('https://script.google.com/macros/s/AKfycbwqwJSaCds8H7FevajUpdBDHSguG7uZBR2RGRPG4lgIBIGgUPdj-fKsvpvKf9Ssu7pTLw/exec', {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name: '', email, phone: '', city: '', cityTier: '', optSms: 'No', optNewsletter: 'No', q1: '', q2: '', q3: '', q4: '' })
-    });
-
-    setTimeout(function() {
-      document.getElementById('hero-form').style.display = 'none';
-      document.getElementById('hero-success').classList.add('visible');
-    }, 800);
+    } else {
+      alert('Something went wrong. Please try again.');
+      btn.textContent = 'Submit my Founding Member application →'; btn.disabled = false;
+    }
+  } catch (err) {
+    document.getElementById('cta-form').style.display = 'none';
+    document.getElementById('cta-success').classList.add('visible');
   }
 }
 // Smooth scroll for nav CTA
