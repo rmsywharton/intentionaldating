@@ -963,19 +963,16 @@ async function submitWaitlist() {
   btn.textContent = 'Submitting...'; btn.disabled = true;
 
   try {
-    const res = await fetch('/submit', {
+    fetch('https://script.google.com/macros/s/AKfycbwqwJSaCds8H7FevajUpdBDHSguG7uZBR2RGRPG4lgIBIGgUPdj-fKsvpvKf9Ssu7pTLw/exec', {
       method: 'POST',
+      mode: 'no-cors',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name, email, phone, city, cityTier, optSms, optNewsletter, consentTimestamp, q1, q2, q3, q4 })
     });
-    const data = await res.json();
-    if (data.success) {
+    setTimeout(() => {
       document.getElementById('cta-form').style.display = 'none';
       document.getElementById('cta-success').classList.add('visible');
-    } else {
-      alert('Something went wrong. Please try again.');
-      btn.textContent = 'Submit my Founding Member application →'; btn.disabled = false;
-    }
+    }, 600);
   } catch (err) {
     document.getElementById('cta-form').style.display = 'none';
     document.getElementById('cta-success').classList.add('visible');
